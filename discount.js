@@ -3,24 +3,24 @@
 between them would be the discounted price */
 
 function discount(prices){ 
-	var sum = 0;
-	var noDiscount = [];
-	for(var i=0; i<prices.length; i++){
-		for(var j=i+1; j<prices.length; j++){
-			if(prices[i] >= prices[j]){
-				sum += prices[i] - prices[j];
-				break;
-			}
-			if(j == prices.length-1){
-				sum += prices[i];
-				noDiscount.push(i);
-			}
-		}
-		if(i == prices.length-1){
-			sum += prices[i];
-			noDiscount.push(i);
-		}
+   var sum = 0;
+   var noDiscount = [];
+   for(var i=0; i<prices.length; i++){
+   	for(var j=i+1; j<prices.length; j++){
+	     if(prices[i] >= prices[j]){
+		 sum += prices[i] - prices[j];
+		 break;
+	     }
+	     if(j == prices.length-1){
+		 sum += prices[i];
+		 noDiscount.push(i);
+	     }
 	}
-	console.log(sum);
-	console.log(noDiscount);
+	if(i == prices.length-1){
+	    sum += prices[i];
+	    noDiscount.push(i);
+	}
+   }
+   console.log(sum);
+   console.log(noDiscount);
 }
